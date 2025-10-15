@@ -1,0 +1,418 @@
+{
+  "entities": {
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user of the Pro Meal Kitchen application.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the User entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "User's full name."
+        },
+        "email": {
+          "type": "string",
+          "description": "User's email address.",
+          "format": "email"
+        },
+        "phoneNumber": {
+          "type": "string",
+          "description": "User's phone number."
+        },
+        "age": {
+          "type": "number",
+          "description": "User's age."
+        },
+        "gender": {
+          "type": "string",
+          "description": "User's gender."
+        },
+        "dietaryPreferences": {
+          "type": "array",
+          "description": "User's dietary preferences (e.g., vegan, keto, high-protein).",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allergies": {
+          "type": "array",
+          "description": "User's allergies.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "healthGoals": {
+          "type": "array",
+          "description": "User's health goals (e.g., weight loss, muscle gain).",
+          "items": {
+            "type": "string"
+          }
+        },
+        "savedAddressIds": {
+          "type": "array",
+          "description": "References to Addresses. (Relationship: User 1:N Address)",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "email"
+      ]
+    },
+    "Restaurant": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Restaurant",
+      "type": "object",
+      "description": "Represents a restaurant that offers healthy meals.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Restaurant entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the restaurant."
+        },
+        "address": {
+          "type": "string",
+          "description": "Restaurant's address."
+        },
+        "cuisine": {
+          "type": "array",
+          "description": "Types of cuisine offered by the restaurant.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rating": {
+          "type": "number",
+          "description": "Restaurant's average rating."
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ]
+    },
+    "Meal": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Meal",
+      "type": "object",
+      "description": "Represents a specific meal offered by a restaurant.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Meal entity."
+        },
+        "restaurantId": {
+          "type": "string",
+          "description": "Reference to Restaurant. (Relationship: Restaurant 1:N Meal)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the meal."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the meal."
+        },
+        "calories": {
+          "type": "number",
+          "description": "Calorie count of the meal."
+        },
+        "protein": {
+          "type": "number",
+          "description": "Protein content of the meal (in grams)."
+        },
+        "fat": {
+          "type": "number",
+          "description": "Fat content of the meal (in grams)."
+        },
+        "carbs": {
+          "type": "number",
+          "description": "Carbohydrate content of the meal (in grams)."
+        },
+        "tags": {
+          "type": "array",
+          "description": "Meal tags (e.g., 'high protein', 'vegan', 'gluten-free')",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "restaurantId",
+        "name"
+      ]
+    },
+    "MealPlan": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "MealPlan",
+      "type": "object",
+      "description": "Represents a user's customized meal plan for a specific day.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the MealPlan entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N MealPlan)"
+        },
+        "date": {
+          "type": "string",
+          "description": "The date for which the meal plan is created.",
+          "format": "date"
+        },
+        "breakfastMealIds": {
+          "type": "array",
+          "description": "References to Meals chosen for breakfast.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lunchMealIds": {
+          "type": "array",
+          "description": "References to Meals chosen for lunch.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "snackMealIds": {
+          "type": "array",
+          "description": "References to Meals chosen for snacks.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dinnerMealIds": {
+          "type": "array",
+          "description": "References to Meals chosen for dinner.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "date"
+      ]
+    },
+    "Order": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Order",
+      "type": "object",
+      "description": "Represents a user's order for meals.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Order entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Order)"
+        },
+        "mealIds": {
+          "type": "array",
+          "description": "References to Meals included in the order.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "orderDate": {
+          "type": "string",
+          "description": "Date and time when the order was placed.",
+          "format": "date-time"
+        },
+        "deliveryAddressId": {
+          "type": "string",
+          "description": "Reference to Address where the order should be delivered."
+        },
+        "totalAmount": {
+          "type": "number",
+          "description": "Total amount of the order."
+        },
+        "status": {
+          "type": "string",
+          "description": "Current status of the order (e.g., pending, processing, delivered)."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "orderDate",
+        "totalAmount",
+        "status"
+      ]
+    },
+    "Address": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Address",
+      "type": "object",
+      "description": "Represents a user's saved address.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Address entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Address)"
+        },
+        "street": {
+          "type": "string",
+          "description": "Street address."
+        },
+        "city": {
+          "type": "string",
+          "description": "City."
+        },
+        "state": {
+          "type": "string",
+          "description": "State."
+        },
+        "zipCode": {
+          "type": "string",
+          "description": "Zip code."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "street",
+        "city",
+        "state",
+        "zipCode"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous",
+      "google.com"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user profiles. This path allows for secure access to user-specific data using the userId. No denormalized authorization fields required, authorization is based on path ownership.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/restaurants/{restaurantId}",
+        "definition": {
+          "entityName": "Restaurant",
+          "schema": {
+            "$ref": "#/backend/entities/Restaurant"
+          },
+          "description": "Stores restaurant information.",
+          "params": [
+            {
+              "name": "restaurantId",
+              "description": "The unique identifier for the restaurant."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/meals/{mealId}",
+        "definition": {
+          "entityName": "Meal",
+          "schema": {
+            "$ref": "#/backend/entities/Meal"
+          },
+          "description": "Stores meal information.",
+          "params": [
+            {
+              "name": "mealId",
+              "description": "The unique identifier for the meal."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/mealPlans/{mealPlanId}",
+        "definition": {
+          "entityName": "MealPlan",
+          "schema": {
+            "$ref": "#/backend/entities/MealPlan"
+          },
+          "description": "Stores meal plans for a specific user. No denormalized authorization fields required, authorization is based on path ownership.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user."
+            },
+            {
+              "name": "mealPlanId",
+              "description": "The unique identifier for the meal plan."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/orders/{orderId}",
+        "definition": {
+          "entityName": "Order",
+          "schema": {
+            "$ref": "#/backend/entities/Order"
+          },
+          "description": "Stores order information for a specific user. No denormalized authorization fields required, authorization is based on path ownership.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user."
+            },
+            {
+              "name": "orderId",
+              "description": "The unique identifier for the order."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/addresses/{addressId}",
+        "definition": {
+          "entityName": "Address",
+          "schema": {
+            "$ref": "#/backend/entities/Address"
+          },
+          "description": "Stores address information for a specific user. No denormalized authorization fields required, authorization is based on path ownership.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique identifier for the user."
+            },
+            {
+              "name": "addressId",
+              "description": "The unique identifier for the address."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore structure is designed to align with the application's requirements, focusing on user-centric data organization and efficient data retrieval. The design adheres to the core principles of Authorization Independence and Structural Segregation. The structure supports the required QAPs (using segregation and/or membership models).\n\nUser data and related entities (Addresses, MealPlans, and Orders) are organized under the `/users/{userId}` collection path. This provides clear ownership and simplifies security rules. MealPlans and Orders are stored as subcollections to maintain data locality.\n\nRestaurants and Meals are stored in top-level collections (`/restaurants` and `/meals`). Since meals belong to restaurants, the `Meal` document contains `restaurantId` to establish the relationship. This simplifies querying meals for a specific restaurant.\n\nAddresses are nested under the user's document as subcollections. This allows for easy retrieval of a user's addresses.\n\nThis structure promotes Authorization Independence. For example, accessing a user's meal plans at `/users/{userId}/mealPlans/{mealPlanId}` does not require fetching the parent `/users/{userId}` document. The security rules can directly verify that `request.auth.uid == userId`.\n\nRegarding QAPs, the separation of data into user-owned paths and global collections allows for secure list operations. For example, listing restaurants does not expose private user data, and listing meal plans under `/users/{userId}/mealPlans` can be secured by verifying the authenticated user's ID."
+  }
+}

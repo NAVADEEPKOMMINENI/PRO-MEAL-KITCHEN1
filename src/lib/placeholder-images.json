@@ -1,0 +1,82 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "A vibrant and healthy salad bowl",
+      "imageUrl": "https://picsum.photos/seed/hero/1200/400",
+      "imageHint": "healthy food"
+    },
+    {
+      "id": "avatar",
+      "description": "A smiling user's profile picture",
+      "imageUrl": "https://picsum.photos/seed/avatar/100/100",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "map",
+      "description": "A map showing delivery routes",
+      "imageUrl": "https://picsum.photos/seed/map/800/600",
+      "imageHint": "city map"
+    },
+    {
+      "id": "restaurant1",
+      "description": "The storefront of a modern, clean restaurant called The Green Bowl",
+      "imageUrl": "https://picsum.photos/seed/restaurant1/400/300",
+      "imageHint": "modern restaurant"
+    },
+    {
+      "id": "restaurant2",
+      "description": "The storefront of a rustic, healthy cafe called Earthly Eats",
+      "imageUrl": "https://picsum.photos/seed/restaurant2/400/300",
+      "imageHint": "cafe interior"
+    },
+    {
+      "id": "restaurant3",
+      "description": "The storefront of a vibrant juice and smoothie bar called Pure Power",
+      "imageUrl": "https://picsum.photos/seed/restaurant3/400/300",
+      "imageHint": "smoothie bar"
+    },
+    {
+      "id": "restaurant4",
+      "description": "The storefront of a high-protein meal prep service called FitFuel Kitchen",
+      "imageUrl": "https://picsum.photos/seed/restaurant4/400/300",
+      "imageHint": "fitness food"
+    },
+    {
+      "id": "meal1",
+      "description": "A grilled chicken salad with avocado and quinoa",
+      "imageUrl": "https://picsum.photos/seed/meal1/200/200",
+      "imageHint": "chicken salad"
+    },
+    {
+      "id": "meal2",
+      "description": "A salmon fillet with roasted asparagus",
+      "imageUrl": "https://picsum.photos/seed/meal2/200/200",
+      "imageHint": "salmon dish"
+    },
+    {
+      "id": "meal3",
+      "description": "A vegan tofu scramble with turmeric and spinach",
+      "imageUrl": "https://picsum.photos/seed/meal3/200/200",
+      "imageHint": "tofu scramble"
+    },
+    {
+      "id": "meal4",
+      "description": "A protein-packed smoothie bowl with berries and nuts",
+      "imageUrl": "https://picsum.photos/seed/meal4/200/200",
+      "imageHint": "smoothie bowl"
+    },
+    {
+      "id": "meal5",
+      "description": "Overnight oats with chia seeds and fruit for breakfast",
+      "imageUrl": "https://picsum.photos/seed/meal5/200/200",
+      "imageHint": "overnight oats"
+    },
+    {
+      "id": "meal6",
+      "description": "A hearty lentil soup",
+      "imageUrl": "https://picsum.photos/seed/meal6/200/200",
+      "imageHint": "lentil soup"
+    }
+  ]
+}
