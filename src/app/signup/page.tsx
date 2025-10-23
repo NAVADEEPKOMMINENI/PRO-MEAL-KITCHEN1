@@ -66,7 +66,7 @@ export default function SignupPage() {
     try {
       const cred = await createUserWithEmailAndPassword(auth, email, password);
       createProfile(cred);
-      toast({ title: 'Account Created!', description: 'Welcome to NutriPlan.' });
+      toast({ title: 'Account Created!', description: 'Welcome to Diet Plan.' });
       router.push('/profile');
     } catch (error: any) {
       toast({
@@ -82,7 +82,7 @@ export default function SignupPage() {
     try {
       const cred = await signInWithPopup(auth, provider);
       createProfile(cred);
-      toast({ title: 'Account Created!', description: 'Welcome to NutriPlan.' });
+      toast({ title: 'Account Created!', description: 'Welcome to Diet Plan.' });
       router.push('/profile');
     } catch (error: any) {
       toast({

@@ -40,10 +40,11 @@ export default function ProfilePage() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
-    setProfile(prev => ({ ...prev, [id]: value }));
+    const isNumberInput = e.target.type === 'number';
+    setProfile(prev => ({ ...prev, [id]: isNumberInput ? (value === '' ? undefined : Number(value)) : value }));
   };
 
-  const handleSelectChange = (id: keyof UserProfile) => (value: string) => {
+  const handleSelectChange = (id: keyof UserProfile) => (value: UserProfile[keyof UserProfile]) => {
     setProfile(prev => ({ ...prev, [id]: value }));
   };
 

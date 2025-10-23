@@ -5,8 +5,8 @@ import AppShell from '@/components/app-shell';
 import { FirebaseClientProvider } from '@/firebase/client-provider';
 
 export const metadata: Metadata = {
-  title: 'NutriPlan - Your Healthy Meal Companion',
-  description: 'Discover healthy meals, create custom plans, and achieve your fitness goals with NutriPlan.',
+  title: 'Diet Plan - Your Healthy Meal Companion',
+  description: 'Discover healthy meals, create custom plans, and achieve your fitness goals with Diet Plan.',
 };
 
 export default function RootLayout({
