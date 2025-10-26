@@ -1,11 +1,11 @@
+import AppShell from '@/components/app-shell';
+import { Toaster } from '@/components/ui/toaster';
 import type { Metadata } from 'next';
 import './globals.css';
-import { Toaster } from '@/components/ui/toaster';
-import AppShell from '@/components/app-shell';
 
 export const metadata: Metadata = {
-  title: 'NutriPlan - Your Healthy Meal Companion',
-  description: 'Discover healthy meals, create custom plans, and achieve your fitness goals with NutriPlan.',
+  title: 'Diet Plan - Your Healthy Meal Companion',
+  description: 'Discover healthy meals, create custom plans, and achieve your fitness goals with Diet Plan.',
 };
 
 export default function RootLayout({

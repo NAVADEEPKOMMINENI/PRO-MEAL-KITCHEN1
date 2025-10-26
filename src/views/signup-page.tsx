@@ -1,14 +1,14 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { Logo } from '@/components/icons';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Logo } from '@/components/icons';
 import { useToast } from '@/hooks/use-toast';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 function GoogleIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -44,7 +44,7 @@ export default function SignupPage() {
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
     if (fullName && email && password) {
-      toast({ title: 'Account Created!', description: 'Welcome to NutriPlan.' });
+      toast({ title: 'Account Created!', description: 'Welcome to Diet Plan.' });
       router.push('/profile');
     } else {
        toast({
@@ -56,7 +56,7 @@ export default function SignupPage() {
   };
 
   const handleGoogleSignUp = () => {
-    toast({ title: 'Account Created!', description: 'Welcome to NutriPlan.' });
+    toast({ title: 'Account Created!', description: 'Welcome to Diet Plan.' });
     router.push('/profile');
   };
 

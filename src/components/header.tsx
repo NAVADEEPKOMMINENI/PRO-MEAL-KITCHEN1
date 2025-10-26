@@ -1,10 +1,7 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { Search, Bell } from 'lucide-react';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,8 +10,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Input } from '@/components/ui/input';
 import { navLinks, userProfileData } from '@/models/data';
+import { Bell, Search } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
 // Mock authentication state
 const useMockAuth = () => {
@@ -42,7 +42,7 @@ export default function Header() {
   return (
     <header className="flex h-16 items-center border-b bg-card px-4 md:px-6 z-10 shrink-0">
       <div className="md:hidden">
-        <h1 className="text-lg font-semibold">{currentPage?.label || 'NutriPlan'}</h1>
+        <h1 className="text-lg font-semibold">{currentPage?.label || 'Diet Plan'}</h1>
       </div>
       <div className="hidden md:flex w-full flex-1">
         <form>
