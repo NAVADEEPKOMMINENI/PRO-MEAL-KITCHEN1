@@ -1,0 +1,82 @@
+{
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "A vibrant and healthy salad bowl",
+      "imageUrl": "https://images.unsplash.com/photo-1490818387583-1baba5e638af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8aGVhbHRoeSUyMGZvb2R8ZW58MHx8fHwxNzYxNDY2MjEyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "healthy food"
+    },
+    {
+      "id": "avatar",
+      "description": "A smiling user's profile picture",
+      "imageUrl": "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBzbWlsaW5nfGVufDB8fHx8MTc2MTQxNjQ3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person smiling"
+    },
+    {
+      "id": "map",
+      "description": "A map showing delivery routes",
+      "imageUrl": "https://images.unsplash.com/photo-1581922819941-6ab31ab79afc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjaXR5JTIwbWFwfGVufDB8fHx8MTc2MTM5OTk4MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city map"
+    },
+    {
+      "id": "restaurant1",
+      "description": "The storefront of a modern, clean restaurant called The Green Bowl",
+      "imageUrl": "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2Rlcm4lMjByZXN0YXVyYW50fGVufDB8fHx8MTc2MTQwNTMxOXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern restaurant"
+    },
+    {
+      "id": "restaurant2",
+      "description": "The storefront of a rustic, healthy cafe called Earthly Eats",
+      "imageUrl": "https://images.unsplash.com/photo-1579341560277-4dfaddaf6e98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjYWZlJTIwaW50ZXJpb3J8ZW58MHx8fHwxNzYxNDA4OTMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cafe interior"
+    },
+    {
+      "id": "restaurant3",
+      "description": "The storefront of a vibrant juice and smoothie bar called Pure Power",
+      "imageUrl": "https://images.unsplash.com/photo-1698413463629-64bfcea157ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzbW9vdGhpZSUyMGJhcnxlbnwwfHx8fDE3NjE0OTUzMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "smoothie bar"
+    },
+    {
+      "id": "restaurant4",
+      "description": "The storefront of a high-protein meal prep service called FitFuel Kitchen",
+      "imageUrl": "https://images.unsplash.com/photo-1587996616596-b714c1c54146?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmaXRuZXNzJTIwZm9vZHxlbnwwfHx8fDE3NjE0OTUzMTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fitness food"
+    },
+    {
+      "id": "meal1",
+      "description": "A grilled chicken salad with avocado and quinoa",
+      "imageUrl": "https://images.unsplash.com/photo-1670237735381-ac5c7fa72c51?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGlja2VuJTIwc2FsYWR8ZW58MHx8fHwxNzYxNDQ5Nzk1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chicken salad"
+    },
+    {
+      "id": "meal2",
+      "description": "A salmon fillet with roasted asparagus",
+      "imageUrl": "https://images.unsplash.com/photo-1560717845-968823efbee1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzYWxtb24lMjBkaXNofGVufDB8fHx8MTc2MTQyNjAzNHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "salmon dish"
+    },
+    {
+      "id": "meal3",
+      "description": "A vegan tofu scramble with turmeric and spinach",
+      "imageUrl": "https://images.unsplash.com/photo-1544519685-86ccb2dab444?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx0b2Z1JTIwc2NyYW1ibGV8ZW58MHx8fHwxNzYxNDk1MzE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "tofu scramble"
+    },
+    {
+      "id": "meal4",
+      "description": "A protein-packed smoothie bowl with berries and nuts",
+      "imageUrl": "https://images.unsplash.com/photo-1627308594190-a057cd4bfac8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzbW9vdGhpZSUyMGJvd2x8ZW58MHx8fHwxNzYxNDkxODM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "smoothie bowl"
+    },
+    {
+      "id": "meal5",
+      "description": "Overnight oats with chia seeds and fruit for breakfast",
+      "imageUrl": "https://images.unsplash.com/photo-1541809570-cce873416d94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvdmVybmlnaHQlMjBvYXRzfGVufDB8fHx8MTc2MTQ2OTM1NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "overnight oats"
+    },
+    {
+      "id": "meal6",
+      "description": "A hearty lentil soup",
+      "imageUrl": "https://images.unsplash.com/photo-1737732137206-04b175acfb50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxsZW50aWwlMjBzb3VwfGVufDB8fHx8MTc2MTQwMTI3MXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "lentil soup"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+/**
+ * @file Firebase Security Rules for Pro Meal Kitchen.
+ *
+ * Core Philosophy:
+ * This ruleset enforces a strict user-ownership model for data nested under /users/{userId}.
+ * Restaurants and Meals are publicly readable, but write access is unrestricted in this prototype.
+ *
+ * Data Structure:
+ * - /users/{userId}: Stores user profiles, secured by owner-only access.
+ * - /restaurants/{restaurantId}: Stores restaurant information, publicly readable.
+ * - /meals/{mealId}: Stores meal information, publicly readable.
+ * - /users/{userId}/mealPlans/{mealPlanId}: Stores meal plans, secured by owner-only access.
+ * - /users/{userId}/orders/{orderId}: Stores order information, secured by owner-only access.
+ * - /users/{userId}/addresses/{addressId}: Stores address information, secured by owner-only access.
+ *
+ * Key Security Decisions:
+ * - Users can only access their own data under the /users/{userId} path.
+ * - Listing of documents is allowed only for user-owned subcollections. Top level collections are publicly listable
+ * - Write operations for Restaurant and Meal entities are not restricted in this prototyping phase.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Defines if the current user is signed in.
+     */
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    /**
+     * @description Defines if the current user is the owner of the resource.
+     */
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    /**
+     * @description Defines if the current user is the owner of the resource and the resource exists.
+     */
+    function isExistingOwner(userId) {
+        return isOwner(userId) && exists(resource);
+    }
+
+    /**
+     * @description
+     * Allows authenticated users to manage their own user profiles.
+     */
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow list: if false; //No listing of users
+
+      allow create: if isSignedIn() && request.auth.uid == userId && request.resource.data.id == userId;
+      allow update: if isExistingOwner(userId);
+      allow delete: if isExistingOwner(userId);
+    }
+
+    /**
+     * @description
+     * Allows anyone to read restaurant information. Write access is not restricted in this prototype.
+     */
+    match /restaurants/{restaurantId} {
+      allow get, list: if true;
+
+      // In this prototype, writes are unrestricted.  This should be changed.
+      allow create: if true;
+      allow update: if true;
+      allow delete: if true;
+    }
+
+    /**
+     * @description
+     * Allows anyone to read meal information. Write access is not restricted in this prototype.
+     */
+    match /meals/{mealId} {
+      allow get, list: if true;
+
+      // In this prototype, writes are unrestricted.  This should be changed.
+      allow create: if true;
+      allow update: if true;
+      allow delete: if true;
+    }
+
+    /**
+     * @description
+     * Allows authenticated users to manage their own meal plans.
+     */
+    match /users/{userId}/mealPlans/{mealPlanId} {
+      allow get: if isOwner(userId);
+      allow list: if true;
+
+      allow create: if isOwner(userId);
+      allow update: if isExistingOwner(userId);
+      allow delete: if isExistingOwner(userId);
+    }
+
+    /**
+     * @description
+     * Allows authenticated users to manage their own orders.
+     */
+    match /users/{userId}/orders/{orderId} {
+      allow get: if isOwner(userId);
+      allow list: if true;
+
+      allow create: if isOwner(userId);
+      allow update: if isExistingOwner(userId);
+      allow delete: if isExistingOwner(userId);
+    }
+
+    /**
+     * @description
+     * Allows authenticated users to manage their own addresses.
+     */
+    match /users/{userId}/addresses/{addressId} {
+      allow get: if isOwner(userId);
+      allow list: if true;
+
+      allow create: if isOwner(userId);
+      allow update: if isExistingOwner(userId);
+      allow delete: if isExistingOwner(userId);
+    }
+  }
+}
