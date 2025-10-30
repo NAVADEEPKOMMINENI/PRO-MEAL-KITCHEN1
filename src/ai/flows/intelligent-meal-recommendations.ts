@@ -8,8 +8,8 @@
  * - IntelligentMealRecommendationsOutput - The return type for the intelligentMealRecommendations function.
  */
 
-import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
+import { ai } from '@/ai/genkit';
+import { z } from 'genkit';
 
 const IntelligentMealRecommendationsInputSchema = z.object({
   dietaryPreferences: z
@@ -61,7 +61,7 @@ const intelligentMealRecommendationsFlow = ai.defineFlow(
     outputSchema: IntelligentMealRecommendationsOutputSchema,
   },
   async input => {
-    const {output} = await prompt(input);
-    return output!;
+    const response = await prompt(input);
+    return response.output!;
   }
 );

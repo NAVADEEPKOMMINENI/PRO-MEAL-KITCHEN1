@@ -4,8 +4,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Diet Plan - Your Healthy Meal Companion',
-  description: 'Discover healthy meals, create custom plans, and achieve your fitness goals with Diet Plan.',
+  title: 'DietPlan - Your Healthy Meal Companion',
+  description: 'Discover healthy meals, create custom plans, and achieve your fitness goals with NutriPlan.',
 };
 
 export default function RootLayout({

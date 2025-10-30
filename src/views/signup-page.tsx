@@ -44,7 +44,7 @@ export default function SignupPage() {
   const handleSignup = (e: React.FormEvent) => {
     e.preventDefault();
     if (fullName && email && password) {
-      toast({ title: 'Account Created!', description: 'Welcome to Diet Plan.' });
+      toast({ title: 'Account Created!', description: 'Welcome to NutriPlan.' });
       router.push('/profile');
     } else {
        toast({
@@ -56,7 +56,7 @@ export default function SignupPage() {
   };
 
   const handleGoogleSignUp = () => {
-    toast({ title: 'Account Created!', description: 'Welcome to Diet Plan.' });
+    toast({ title: 'Account Created!', description: 'Welcome to DietPlan.' });
     router.push('/profile');
   };
 

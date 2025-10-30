@@ -15,7 +15,7 @@ export default function Sidebar() {
       <div className="flex items-center h-16 px-6 border-b">
         <Link href="/" className="flex items-center gap-2 font-semibold">
           <Logo className="h-6 w-6 text-primary" />
-          <span className="text-lg">Diet Plan</span>
+          <span className="text-lg">DietPlan</span>
         </Link>
       </div>
       <nav className="flex-1 p-4 space-y-2">

@@ -1,4 +1,4 @@
-# **App Name**: Diet Plan
+# **App Name**: NutriPlan
 
 ## Core Features:
 
